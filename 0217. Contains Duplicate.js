@@ -16,3 +16,18 @@ var containsDuplicate = function(nums) {
     return false
     
 };
+
+/**
+ * @param {number[]} nums
+ * @return {boolean}
+ */
+var containsDuplicate = function(nums) {
+    // Approach 2 (99.04 Faster)
+    // Use Set and return true if encountered duplicate
+    let set = new Set(nums)
+    if (set.size === nums.length) {
+        return false
+    }
+    return true
+    
+};
