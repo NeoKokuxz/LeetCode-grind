@@ -31,3 +31,15 @@ var containsDuplicate = function(nums) {
     return true
     
 };
+
+// 1 line solution
+/**
+ * @param {number[]} nums
+ * @return {boolean}
+ */
+var containsDuplicate = function(nums) {
+    // Approach 2
+    // Use Set and return true if encountered duplicate
+    // O(n) for both time and space complexity 
+    return new Set(nums).size !== nums.length
+};
