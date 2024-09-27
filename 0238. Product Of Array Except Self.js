@@ -41,3 +41,27 @@ var productExceptSelf = function (nums) {
 
 // Post table
 // 1 <- 2 <- 3 <- 4 = 24 24 12 4 
+
+/**
+ * @param {number[]} nums
+ * @return {number[]}
+ */
+var productExceptSelf = function (nums) {
+    // Pre table
+    let preTable = []
+    let product = 1
+    for (let i = 0; i < nums.length; i++) {
+        preTable.push(product)
+        product *= nums[i]
+    }
+    // Post Table = Product
+    let output = new Array(nums.length).fill(1)
+    product = 1
+    for (let j = nums.length - 1; j >= 0; j--) {
+        output[j] = product * preTable[j]
+        product *= nums[j]
+    }
+
+    return output
+};
+
