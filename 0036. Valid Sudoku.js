@@ -9,10 +9,10 @@ var isValidSudoku = function (board) {
     for (let i = 0; i < 9; i++) {
         for (let j = 0; j < 9; j++) {
             if (board[i][j] !== ".") {
-                let current = board[i][j]
-                let row = current + " found in row " + i
-                let column = current + " found in column " + j
-                let subBox = current + "found in subBox "  + Math.floor(i / 3) + " x " + Math.floor(j/3)
+                const current = board[i][j]
+                const row = current + " found in row " + i
+                const column = current + " found in column " + j
+                const subBox = current + " found in subBox "  + Math.floor(i / 3) + " x " + Math.floor(j/3)
                 if(seen.has(row) || seen.has(column) || seen.has(subBox)) {
                     return false
                 } else {
